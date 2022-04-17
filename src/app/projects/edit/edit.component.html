@@ -1,0 +1,74 @@
+<form
+    class="container-editProject-modal"
+    #f="ngForm"
+    #projectUpdateForm="ngForm"
+    (ngSubmit)="projectUpdate(f, project.project_id)">
+
+    <div 
+        [hidden]="projectUpdated"
+        *ngIf="project">
+
+        <button
+            type="button"
+            class="x-button"
+            (click)="cancel(false)">X
+        </button>
+
+        <div class="projectTitle">
+            <label>
+                Title:
+                <input
+                    type="text"
+                    name="title"
+                    #projectTitle="ngModel"
+                    [(ngModel)]="project.title">
+            </label>
+        </div>
+        <div class="projectDate">
+            <label>
+                Start date:
+                <input
+                    type="text"
+                    name="start_date"
+                    #projectStart_date="ngModel"
+                    [(ngModel)]="project.start_date">
+            </label>
+            <label>
+                End date:
+                <input
+                    type="text"
+                    name="end_date"
+                    #projectEnd_date="ngModel"
+                    [(ngModel)]="project.end_date">
+            </label>
+        </div>
+        
+        <div class="projectStatusBar">
+            <label>
+                Status
+                <input
+                    type="number"
+                    name="status"
+                    #projectStatus="ngModel"
+                    [(ngModel)]="project.status"> %
+                    <mat-progress-bar mode="determinate" value="{{project.status}}"></mat-progress-bar>
+            </label>
+        </div>
+
+        <div class="container-btn">
+            <button
+                type="submit"
+                name="send">Update
+            </button>
+        </div>
+    </div>
+
+
+    <div class="success-message" [hidden]="!projectUpdated">
+        <button
+            type="button"
+            (click)="cancel(false)">X
+        </button>
+        <p>Project updated with success!</p>
+    </div>
+</form>

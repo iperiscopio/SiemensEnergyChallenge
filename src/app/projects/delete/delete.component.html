@@ -1,0 +1,32 @@
+<div class="container-deleteProject-modal">
+
+    <div 
+        [hidden]="projectDeleted"
+        *ngIf="projectId">
+        <button
+            type="button"
+            class="x-button"
+            (click)="cancel(false)">x
+        </button>
+        <p>Do you wish to delete this project?</p>
+        <button
+            type="button"
+            (click)="cancel(false)">Cancel
+        </button>
+        <button
+            type="submit"
+            name="send"
+            (click)="deleteProject(projectId)">Delete project
+        </button>
+    </div>
+    
+    <div class="success-message" [hidden]="!projectDeleted">
+        <button
+            type="button"
+            name="send"
+            (click)="cancel(false)">x
+        </button>
+        <p>Project deleted with success</p>
+    </div>
+
+</div>

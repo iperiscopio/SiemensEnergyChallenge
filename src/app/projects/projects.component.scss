@@ -1,0 +1,31 @@
+.container-projects {
+    margin-bottom: 50px;
+
+    h1 {
+        font-size: 1.8rem;
+        text-transform: uppercase;
+    }
+    .container-projects-btn {
+        margin-top: 80px;
+        
+        button {
+            border-radius: 10px;
+            border: none;
+            padding: 20px 60px 20px 30px;
+            background-color: #009997;
+            color: #fff;
+            margin-right: 30px;
+            font-size: 1.1rem;
+            position: relative;
+            cursor: pointer;
+
+            span {
+                position: absolute;
+                top: 6px;
+                right: 30px;
+                margin-left: 20px;
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

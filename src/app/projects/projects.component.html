@@ -1,0 +1,17 @@
+<section class="container-projects">
+    <h1>Projects</h1>
+
+    <div class="container-projects-btn">
+        <button 
+            [hidden]="openProject" 
+            (click)="openProjects()">My projects  <span>&#748;</span>
+        </button>
+        <button 
+            [hidden]="addProject" 
+            (click)="openCreateProject()">Create new project  <span>&#748;</span>
+        </button>
+    </div>
+</section>
+
+<app-add [hidden]="!addProject"></app-add>
+<app-projects-list [hidden]="!openProject"></app-projects-list>

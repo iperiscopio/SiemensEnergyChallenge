@@ -1,0 +1,22 @@
+.container-home-main {
+    width: 100%;
+    margin-right: 50px;
+    position: relative;
+    margin-bottom: 100px;
+
+    h1 {
+        font-size: 2rem;
+        position: absolute;
+        top: 50px;
+        left: 120px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .container-home-img {
+        width: fit-content;
+        img {
+            width: 90%;
+        }
+    }
+}

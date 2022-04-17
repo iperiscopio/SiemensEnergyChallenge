@@ -1,0 +1,57 @@
+<section class="container-projects">
+    <h1>Projects alocated to me</h1>
+
+    <div 
+        class="container-projects-project"
+        *ngFor="let project of projects">
+
+        <div class="container-btn">
+            <button
+                class="btn-edit"
+                type="button"
+                (click)="openEditionModal(project)">Edit
+            </button>
+            <button
+                class="btn-delete"
+                type="button"
+                (click)="openDeletionModal(project)">Delete
+            </button>
+        </div>
+        
+        <div>
+            <h2>Title:</h2>
+            <p>{{ project.title }}</p>
+        </div>
+        <div class="projectDate">
+            <h2>Start date:</h2>
+            <p>{{ project.start_date }}</p>
+    
+            <h2>End date:</h2>
+            <p>{{ project.end_date }}</p>
+        </div>
+        <div class="projectStatusBar">
+            <h2>Status:</h2>
+            <p>{{ project.status }}%</p>
+            <div class="statusBar">
+                <mat-progress-bar mode="determinate" value="{{project.status}}"></mat-progress-bar>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal Edit Form -->
+<app-edit 
+    [project]="selectedProject"
+    [projectUpdated]="projectUpdated"
+    [hidden]="!editModal"
+    (closeModal)="cancel($event)">
+</app-edit>
+
+
+<!-- Modal Delete Project -->
+<app-delete
+    [projectId]="projectId"
+    [projectDeleted]="projectDeleted"
+    [hidden]="!deleteModal"
+    (closeModal)="cancel($event)">
+</app-delete>

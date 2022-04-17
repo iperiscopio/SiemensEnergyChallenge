@@ -1,0 +1,49 @@
+<section class="container-dashboard" *ngIf="user">
+    <h1>Wecolme to your dashboard {{ user[0].first_name }}</h1>
+  
+    <div class="container-dashboard-profileInfo">
+      <div class="profileInfo-image">
+          <img [src]="user[0].profile_image" alt="user's picture" />
+      </div>
+  
+      <div class="profileInfo-content">
+          <div>
+              <div>
+                  <h2>First name:</h2>
+                  <p>{{ user[0].first_name }}</p>
+              </div>
+              <div>
+                  <h2>Last name:</h2>
+                  <p>{{ user[0].last_name }}</p>
+              </div>
+              <div>
+                  <h2>Company's role:</h2>
+                  <p>{{ user[0].role }}</p>
+              </div>
+              <div>
+                  <h2>Email:</h2>
+                  <p>{{ user[0].email }}</p>
+              </div>
+          </div>
+          <div>
+              <div>
+                  <h2>Address:</h2>
+                  <p>{{ user[0].address }}</p>
+              </div>
+              <div>
+                  <h2>Postal Code:</h2>
+                  <p>{{ user[0].postal_code }}</p>
+              </div>
+              <div>
+                  <h2>Country:</h2>
+                  <p>{{ user[0].country }}</p>
+              </div>
+              <div>
+                  <h2>Contact Number:</h2>
+                  <p>{{ user[0].contact_number }}</p>
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  

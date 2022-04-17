@@ -1,0 +1,72 @@
+<section class="container-projects-add">
+    <h1>Add a new project to your function</h1>
+
+    <form
+        class="addForm"
+        #f="ngForm"
+        #projectAddForm="ngForm"
+        (ngSubmit)="projectCreate(f)">
+
+        <div class="projectTitle">
+            <label>
+                Title:
+                <input
+                    type="text"
+                    name="title"
+                    #projectTitle="ngModel"
+                    [(ngModel)]="project.title"
+                    required>
+            </label>
+        </div>
+        <div class="projectDate">
+            <label>
+                Start date:
+                <input 
+                    type="text"
+                    name="start_date"
+                    #projectStart_date="ngModel"
+                    [(ngModel)]="project.start_date"
+                    placeholder="01-01-2022"
+                    required>
+            </label>
+            <label>
+                End date:
+                <input
+                    type="text"
+                    name="end_date"
+                    #projectEnd_date="ngModel"
+                    [(ngModel)]="project.end_date"
+                    placeholder="01-01-2022"
+                    required>
+            </label> 
+        </div>
+
+        <div class="projectStatusBar">
+            <label>
+                Status:
+                <input
+                    type="number"
+                    name="status"
+                    #projectStatus="ngModel"
+                    [(ngModel)]="project.status"> %
+                
+                <mat-progress-bar mode="determinate" value="{{project.status}}"></mat-progress-bar>
+                
+            </label>
+        </div>
+
+        <div class="container-btn">
+            <button
+                type="submit"
+                name="send"
+                [disabled]="projectAddForm.invalid">Add
+            </button>
+        </div>
+
+        <div class="success-message" [hidden]="!projectCreated">
+            <p>Project {{ project.title }} created with success!</p>
+        </div>
+    </form>
+
+    
+</section>
